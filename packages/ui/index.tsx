@@ -1,2 +1,6 @@
 import * as React from "react";
-export * from "./Button";
+
+import Button from "./Button";
+
+// eslint-disable-next-line import/prefer-default-export
+export { Button };
