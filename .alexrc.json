@@ -1,1 +1,1 @@
-{ "noBinary": true }
+{ "noBinary": true, "allow": ["hooks"] }
