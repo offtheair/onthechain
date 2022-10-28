@@ -7,10 +7,11 @@
     "packages/*"
   ],
   "scripts": {
+    "full-turbo": "pnpm lint && pnpm build",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint:language": "alex .",
     "lint": "turbo run lint && pnpm lint:language",
+    "lint:language": "alex .",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,html,css}\"",
     "prepare": "husky install"
   },
@@ -24,9 +25,13 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,html,css}": [
-      "prettier --write",
-      "eslint --fix",
-      "lint-language"
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{js,jsx,ts,tsx,md}": [
+      "alex"
     ]
   },
   "engines": {
