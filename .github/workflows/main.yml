@@ -14,6 +14,6 @@ jobs:
         with:
           node-version: 17
           cache: 'pnpm'
-          cache-dependency-path: subdir/pnpm-lock.yaml
+          cache-dependency-path: '**/pnpm-lock.yaml'
       - run: pnpm dev
       - run: pnpm test:ci
