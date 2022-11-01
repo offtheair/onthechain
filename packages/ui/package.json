@@ -7,6 +7,9 @@
   "scripts": {
     "lint": "eslint *.ts*"
   },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
   "devDependencies": {
     "@radix-ui/react-accessible-icon": "^1.0.1",
     "@radix-ui/react-accordion": "^1.0.1",

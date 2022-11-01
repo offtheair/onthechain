@@ -23,6 +23,6 @@
       }
     ]
   },
-  "include": ["src", "next-env.d.ts"],
+  "include": [".", "src", "app", "pages", "next-env.d.ts"],
   "exclude": ["node_modules"]
 }
