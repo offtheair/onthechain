@@ -10,7 +10,7 @@
     "full-turbo": "pnpm lint && pnpm build",
     "test:e2e": "cypress open",
     "test:component": "cypress open --component",
-    "test:ci": "cypress run",
+    "test:ci": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run'",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint && pnpm lint:language",
@@ -28,6 +28,7 @@
     "prettier": "latest",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
+    "start-server-and-test": "^1.14.0",
     "turbo": "latest"
   },
   "lint-staged": {
