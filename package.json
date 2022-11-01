@@ -1,0 +1,41 @@
+{
+  "name": "onthechain",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "full-turbo": "pnpm lint && pnpm build",
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint && pnpm lint:language",
+    "lint:language": "alex .",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,html,css}\"",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "alex": "^10.0.0",
+    "eslint-config-custom": "workspace:*",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,html,css}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{js,jsx,ts,tsx,md}": [
+      "alex"
+    ]
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@7.13.4"
+}
