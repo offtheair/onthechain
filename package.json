@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "full-turbo": "pnpm lint && pnpm build",
-    "cypress:open": "cypress open",
+    "test:e2e": "cypress open",
+    "test:component": "cypress open --component",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint && pnpm lint:language",
