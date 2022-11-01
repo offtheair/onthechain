@@ -8,6 +8,9 @@
   ],
   "scripts": {
     "full-turbo": "pnpm lint && pnpm build",
+    "test:e2e": "cypress open",
+    "test:component": "cypress open --component",
+    "test:ci": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run'",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint && pnpm lint:language",
@@ -17,10 +20,15 @@
   },
   "devDependencies": {
     "alex": "^10.0.0",
+    "cypress": "^10.11.0",
     "eslint-config-custom": "workspace:*",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
+    "next": "12.0.0",
     "prettier": "latest",
+    "react": "^18.2.0",
+    "react-dom": "18.2.0",
+    "start-server-and-test": "^1.14.0",
     "turbo": "latest"
   },
   "lint-staged": {
