@@ -10,6 +10,7 @@
     "full-turbo": "pnpm lint && pnpm build",
     "test:e2e": "cypress open",
     "test:component": "cypress open --component",
+    "test:ci": "cypress run",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint && pnpm lint:language",
