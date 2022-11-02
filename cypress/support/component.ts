@@ -23,5 +23,9 @@ import { mount } from 'cypress/react18'
 
 Cypress.Commands.add('mount', mount)
 
+Cypress.Screenshot.defaults({
+  screenshotOnRunFailure: false,
+})
+
 // Example use:
 // cy.mount(<MyComponent />)

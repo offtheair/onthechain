@@ -9,7 +9,7 @@
   "scripts": {
     "full-turbo": "pnpm lint && pnpm build",
     "test:e2e": "cypress open",
-    "test:component": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress open --component'",
+    "test:component": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run --component'",
     "test:ci": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run'",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",

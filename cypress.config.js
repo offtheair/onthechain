@@ -10,6 +10,7 @@ module.exports = defineConfig({
     video: false,
   },
   component: {
+    specPattern: 'cypress/component/**/*.cy.{ts,tsx}',
     devServer: {
       framework: 'next',
       bundler: 'webpack',
