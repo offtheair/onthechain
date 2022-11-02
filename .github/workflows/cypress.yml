@@ -29,6 +29,9 @@ jobs:
           # quote the url to be safe against YML parsing surprises
           wait-on: 'http://localhost:3000'
           record: true
+          command: |
+            pnpm test:component
+            pnpm test:ci
         env:
           # we have already installed all dependencies above
           install: false
