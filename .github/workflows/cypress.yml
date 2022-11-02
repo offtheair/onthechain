@@ -8,19 +8,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@master
         with:
           version: latest
 
+      - name: Install dependencies
+        uses: cypress-io/github-action@master
+        with:
+          # just perform install
+          runTests: false
+
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@master
         with:
           build: pnpm dlx cypress info
           record: true
         env:
+          # we have already installed all dependencies above
+          install: false
           # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
