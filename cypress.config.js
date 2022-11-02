@@ -1,6 +1,7 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
+  projectId: '2t2yru',
   e2e: {
     baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {
@@ -13,5 +14,6 @@ module.exports = defineConfig({
       framework: 'next',
       bundler: 'webpack',
     },
+    video: false,
   },
 })

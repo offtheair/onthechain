@@ -54,5 +54,10 @@ module.exports = {
       { functions: false, classes: true, variables: true, typedefs: true },
     ],
   },
-  ignorePatterns: ['.eslintrc.js', 'next.config.js', 'index.js'],
+  ignorePatterns: [
+    '.eslintrc.js',
+    'next.config.js',
+    'index.js',
+    'cypress.config.js',
+  ],
 }

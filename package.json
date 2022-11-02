@@ -29,7 +29,10 @@
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "start-server-and-test": "^1.14.0",
-    "turbo": "latest"
+    "tsconfig": "workspace:*",
+    "turbo": "latest",
+    "typescript": "4.8.4",
+    "ui": "workspace:*"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,html,css}": [

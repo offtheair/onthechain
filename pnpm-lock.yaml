@@ -14,7 +14,10 @@ importers:
       react: ^18.2.0
       react-dom: 18.2.0
       start-server-and-test: ^1.14.0
+      tsconfig: workspace:*
       turbo: latest
+      typescript: 4.8.4
+      ui: workspace:*
     devDependencies:
       alex: 10.0.0
       cypress: 10.11.0
@@ -26,7 +29,10 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       start-server-and-test: 1.14.0
+      tsconfig: link:packages/tsconfig
       turbo: 1.6.3
+      typescript: 4.8.4
+      ui: link:packages/ui
 
   apps/tv:
     specifiers:
