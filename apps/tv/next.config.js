@@ -2,9 +2,9 @@
 const nextConfig = {
   experimental: {
     appDir: true,
-    transpilePackages: ["ui"],
+    transpilePackages: ['ui'],
   },
   reactStrictMode: true,
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
