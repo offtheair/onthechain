@@ -26,7 +26,7 @@ jobs:
         with:
           build: pnpm dlx cypress info
           record: true
-          command: pnpm test:component
+          command: pnpm test:component:record
         env:
           # we have already installed all dependencies above
           install: false
@@ -42,7 +42,7 @@ jobs:
         with:
           build: pnpm dlx cypress info
           record: true
-          command: pnpm test:ci
+          command: pnpm test:ci:record
         env:
           install: false
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
