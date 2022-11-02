@@ -21,7 +21,7 @@ jobs:
           # just perform install
           runTests: false
 
-      - name: Cypress run
+      - name: Cypress run component tests
         uses: cypress-io/github-action@master
         with:
           build: pnpm dlx cypress info
@@ -29,7 +29,26 @@ jobs:
           # quote the url to be safe against YML parsing surprises
           wait-on: 'http://localhost:3000'
           record: true
-          command: pnpm test:component && pnpm test:ci
+          command: pnpm test:component
+        env:
+          # we have already installed all dependencies above
+          install: false
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # pls dont hack me
+          CYPRESS_PROJECT_ID: 2t2yru
+
+      - name: Cypress run CI tests
+        uses: cypress-io/github-action@master
+        with:
+          build: pnpm dlx cypress info
+          start: pnpm dev
+          # quote the url to be safe against YML parsing surprises
+          wait-on: 'http://localhost:3000'
+          record: true
+          command: pnpm test:ci
         env:
           # we have already installed all dependencies above
           install: false
