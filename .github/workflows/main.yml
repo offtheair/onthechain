@@ -17,6 +17,7 @@ jobs:
           node-version: 17
           cache: 'pnpm'
           cache-dependency-path: '**/pnpm-lock.yaml'
+          cache-dependency-path: '/home/runner/.cache/Cypress'
 
       - run: pnpm i
 
