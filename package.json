@@ -36,7 +36,7 @@
       "prettier --write"
     ],
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
+      "eslint"
     ],
     "*.{js,jsx,ts,tsx,md}": [
       "alex"

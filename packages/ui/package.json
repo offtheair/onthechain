@@ -5,7 +5,7 @@
   "types": "./src/index.tsx",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint \"./src/**\""
+    "lint": "eslint ./src/**"
   },
   "devDependencies": {
     "@radix-ui/react-accessible-icon": "^1.0.1",
