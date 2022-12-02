@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from 'ui'
+
 import styles from './page.module.css'
 
 const Home = () => (
