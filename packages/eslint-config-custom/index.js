@@ -38,11 +38,20 @@ module.exports = {
     'import/no-default-export': 'error',
     // It's not accurate in the monorepo style
     'import/no-extraneous-dependencies': 'off',
+    // sorted imports
+    'import/order': [
+      'warn',
+      {
+        'newlines-between': 'always',
+      },
+    ],
     // react
     'react/react-in-jsx-scope': 'off',
+    'react/no-unknown-property': 'off', // three.js
     'react/function-component-definition': 'off',
     'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': 'off',
+    'react/jsx-props-no-spreading': 'off',
     // Use function hoisting to improve code readability
     'no-use-before-define': [
       'error',
@@ -50,6 +59,7 @@ module.exports = {
     ],
     // Allow most functions to rely on type inference. If the function is exported, then `@typescript-eslint/explicit-module-boundary-types` will ensure it's typed.
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-use-before-define': [
       'error',
       { functions: false, classes: true, variables: true, typedefs: true },
