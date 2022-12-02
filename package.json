@@ -9,8 +9,10 @@
   "scripts": {
     "full-turbo": "pnpm lint && pnpm build",
     "test:e2e": "cypress open",
-    "test:component": "cypress open --component",
+    "test:component": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run --component'",
+    "test:component:record": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run --component --record'",
     "test:ci": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run'",
+    "test:ci:record": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run --record'",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint && pnpm lint:language",
@@ -29,14 +31,17 @@
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "start-server-and-test": "^1.14.0",
-    "turbo": "latest"
+    "tsconfig": "workspace:*",
+    "turbo": "latest",
+    "typescript": "4.8.4",
+    "ui": "workspace:*"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,html,css}": [
       "prettier --write"
     ],
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
+      "eslint"
     ],
     "*.{js,jsx,ts,tsx,md}": [
       "alex"

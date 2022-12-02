@@ -7,6 +7,18 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
+
+import { mount } from 'cypress/react18'
+
+Cypress.Commands.add('mount', mount)
+
+// if we need to wrap, fe: router
+// Cypress.Commands.add('mount', (component, options) => {
+//   // Wrap any parent components needed
+//   // ie: return mount(<MyProvider>{component}</MyProvider>, options)
+//   return mount(component, options)
+// })
+
 //
 //
 // -- This is a parent command --

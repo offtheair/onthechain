@@ -1,0 +1,50 @@
+name: Cypress Tests
+
+on: [pull_request]
+
+jobs:
+  cypress-run-all:
+    name: Cypress Run All Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@master
+        with:
+          version: latest
+
+      - name: Install dependencies
+        uses: cypress-io/github-action@master
+        with:
+          # just perform install
+          runTests: false
+
+      - name: Cypress Component Tests
+        uses: cypress-io/github-action@master
+        with:
+          build: pnpm dlx cypress info
+          record: true
+          command: pnpm test:component:record
+        env:
+          # we have already installed all dependencies above
+          install: false
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # pls dont hack me
+          CYPRESS_PROJECT_ID: 2t2yru
+
+      - name: Cypress CI Tests
+        uses: cypress-io/github-action@master
+        with:
+          build: pnpm dlx cypress info
+          record: true
+          command: pnpm test:ci:record
+        env:
+          install: false
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_PROJECT_ID: 2t2yru
