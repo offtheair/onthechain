@@ -7,16 +7,16 @@
     "packages/*"
   ],
   "scripts": {
-    "full-turbo": "pnpm lint && pnpm build",
-    "test:e2e": "cypress open",
-    "test:component": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run --component'",
-    "test:component:record": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run --component --record'",
-    "test:ci": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run'",
-    "test:ci:record": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run --record'",
-    "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "full-turbo": "pnpm lint && pnpm build",
     "lint": "turbo run lint && pnpm lint:language",
     "lint:language": "alex .",
+    "test:e2e": "cypress open",
+    "test:ci": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run'",
+    "test:ci:record": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run --record'",
+    "test:component": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run --component'",
+    "test:component:record": "start-server-and-test 'pnpm dev' http://localhost:3000 'pnpm cypress run --component --record'",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,html,css}\"",
     "prepare": "husky install"
   },
