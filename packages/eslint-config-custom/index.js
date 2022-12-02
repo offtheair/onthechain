@@ -34,6 +34,7 @@ module.exports = {
     '@next/next/no-html-link-for-pages': 'off',
     // https://ilikekillnerds.com/2019/08/default-exports-bad/
     'import/prefer-default-export': 'off',
+    // prefer named exports in components
     'import/no-default-export': 'error',
     // It's not accurate in the monorepo style
     'import/no-extraneous-dependencies': 'off',
@@ -54,6 +55,16 @@ module.exports = {
       { functions: false, classes: true, variables: true, typedefs: true },
     ],
   },
+  overrides: [
+    // prefer default exports in next.js' app/pages dirs
+    {
+      files: ['**/app/**/*.tsx', '**/pages/**/*.tsx'],
+      rules: {
+        'import/prefer-default-export': 'error',
+        'import/no-default-export': 'off',
+      },
+    },
+  ],
   ignorePatterns: [
     '.eslintrc.js',
     'next.config.js',
